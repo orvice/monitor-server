@@ -1,18 +1,34 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/DeanThompson/ginpprof"
 	"github.com/catpie/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/orvice/monitor-server/mod"
+)
+
+var (
+	nodes []mod.Node
 )
 
 func web() {
 	r := gin.Default()
 	r.Use(cors.Default())
-	r.GET("/g", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
+	r.GET("/nodes", func(c *gin.Context) {
+		var err error
+		if nodes != nil {
+			c.JSON(http.StatusOK, nodes)
+			return
+		}
+		nodes, err = nodeLoader.GetNodes()
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{})
+			return
+		}
+		c.JSON(http.StatusOK, nodes)
+		return
 	})
 
 	if Debug {
