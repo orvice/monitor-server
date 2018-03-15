@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  ss:
+    image: orvice/monitor-server
+    restart: always
+    volumes:
+      - ./log:/var/log
+    environment:
+      - NODE_CONFIG_PATH=/etc/monitor-server/config.json
+      - LISTEN_ADDR=:8081
+    container_name: monitor-server
