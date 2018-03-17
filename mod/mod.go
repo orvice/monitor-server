@@ -32,7 +32,17 @@ func NewIoClient(so socketio.Socket) *IoClient {
 
 type Node struct {
 	ID   int32  `json:"id"`
+	Name string `json:"name"`
 	Addr string `json:"addr"`
+
+	// Stat
+	BytesTotal        int64   `json:"bytesTotal"`
+	MemoryTotal       int64   `json:"memoryTotal"`
+	MemoryUsed        int64   `json:"memoryUsed"`
+	MemoryUsedPercent float64 `json:"memoryUsedPercent"`
+	Load1             float64 `json:"load1"`
+	Load5             float64 `json:"load5"`
+	Load15            float64 `json:"load15"`
 }
 
 type NodeLoader interface {
