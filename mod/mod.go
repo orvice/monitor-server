@@ -40,6 +40,8 @@ type Node struct {
 	MemoryTotal       int64   `json:"memoryTotal"`
 	MemoryUsed        int64   `json:"memoryUsed"`
 	MemoryUsedPercent float64 `json:"memoryUsedPercent"`
+	DiskUsagePercent  float64 `json:"disk_usage_percent"`
+	CpuCount          int     `json:"cpu_count"`
 	Load1             float64 `json:"load1"`
 	Load5             float64 `json:"load5"`
 	Load15            float64 `json:"load15"`

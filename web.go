@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"fmt"
 	"github.com/DeanThompson/ginpprof"
 	"github.com/catpie/cors"
 	"github.com/gin-gonic/gin"
@@ -12,6 +13,14 @@ import (
 var (
 	nodes []mod.Node
 )
+
+func getNodesMap() map[string]mod.Node {
+	m := make(map[string]mod.Node)
+	for _, n := range nodes {
+		m[fmt.Sprintf("%d", n.ID)] = n
+	}
+	return m
+}
 
 func web() {
 	r := gin.Default()
