@@ -19,7 +19,7 @@ func main() {
 	InitEnv()
 	logger = log.NewDefaultLogger()
 	ioManager = NewIoManager(logger)
-	nodeLoader = NewFileNodeLoader(NodeConfigPath)
+	InitNodeLoader()
 	manager = NewManager(nodeLoader, logger)
 	err = InitSocketIoSever()
 	errExit(err)
