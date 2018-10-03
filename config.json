@@ -1,12 +1,17 @@
 [
   {
     "id": 1,
-    "name": "US",
-    "addr": "ws://hk2.loli.lc:8080/ws"
+    "name": "HK",
+    "addr": "ws://hk1.loli.lc:8082/ws"
   },
   {
     "id": 2,
-    "name": "HK",
-    "addr": "ws://hk5.loli.lc:8080/ws"
+    "name": "US",
+    "addr": "ws://us2.loli.lc:8080/ws"
+  },
+  {
+    "id": 3,
+    "name": "RU",
+    "addr": "ws://ru.loli.lc:8080/ws"
   }
 ]

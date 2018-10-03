@@ -52,7 +52,7 @@ func (m *MuLoader) GetNodes() ([]mod.Node, error) {
 		out = append(out, mod.Node{
 			ID:   v.ID,
 			Name: v.Name,
-			Addr: v.ServerMonitorAddr,
+			Addr: v.GetMonitorWsAddr(),
 		})
 	}
 	return out, nil
