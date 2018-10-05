@@ -44,7 +44,7 @@ func (m *Manager) Run() error {
 
 		switch MonitorMethod {
 		case Grpc:
-			c := client.NewGrpcClient(n.ID, n.Addr, m.packetCh, m.logger)
+			c := client.NewGrpcClient(n.ID, n.GrpcAddr, m.packetCh, m.logger)
 			m.logger.Infof("run node %d addr: %s in grpc mod", n.ID, n.GrpcAddr)
 			go c.Run()
 			m.clients.Store(n.ID, c)
