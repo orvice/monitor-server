@@ -36,7 +36,8 @@ func NewGrpcClient(nodeID int32, grpcAddr string, msgRecv chan mod.Packet,
 
 func (g *GrpcClient) Run() error {
 	for {
-		if g.RunStream() != nil {
+		if err := g.RunStream(); err != nil {
+			g.logger.Errorf("nodeID %d stream failed %v,reconnect...", g.NodeID, err)
 		}
 		time.Sleep(time.Second)
 		continue
