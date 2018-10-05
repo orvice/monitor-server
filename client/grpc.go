@@ -2,6 +2,7 @@ package client
 
 import (
 	"context"
+	"time"
 
 	"github.com/orvice/kit/log"
 	"github.com/orvice/monitor-client/proto"
@@ -34,6 +35,12 @@ func NewGrpcClient(nodeID int32, grpcAddr string, msgRecv chan mod.Packet,
 }
 
 func (g *GrpcClient) Run() error {
+	for {
+		if g.RunStream() != nil {
+		}
+		time.Sleep(time.Second)
+		continue
+	}
 }
 
 func (g *GrpcClient) RunStream() error {
