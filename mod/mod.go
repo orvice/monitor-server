@@ -31,9 +31,10 @@ func NewIoClient(so socketio.Socket) *IoClient {
 }
 
 type Node struct {
-	ID   int32  `json:"id"`
-	Name string `json:"name"`
-	Addr string `json:"addr"`
+	ID       int32  `json:"id"`
+	Name     string `json:"name"`
+	Addr     string `json:"addr"`
+	GrpcAddr string `json:"grpc_addr"`
 
 	// Stat
 	BytesTotal        int64   `json:"bytesTotal"`

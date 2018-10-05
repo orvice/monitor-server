@@ -41,11 +41,22 @@ func (m *Manager) Run() error {
 		return err
 	}
 	for _, n := range nodes {
-		c := client.NewClient(n.ID, n.Addr, m.packetCh, m.logger)
-		m.logger.Infof("run node %d addr: %s", n.ID, n.Addr)
-		go c.Run()
-		m.clients.Store(n.ID, c)
+
+		switch MonitorMethod {
+		case Grpc:
+			c := client.NewGrpcClient(n.ID, n.Addr, m.packetCh, m.logger)
+			m.logger.Infof("run node %d addr: %s in grpc mod", n.ID, n.GrpcAddr)
+			go c.Run()
+			m.clients.Store(n.ID, c)
+		default:
+			c := client.NewClient(n.ID, n.Addr, m.packetCh, m.logger)
+			m.logger.Infof("run node %d addr: %s", n.ID, n.Addr)
+			go c.Run()
+			m.clients.Store(n.ID, c)
+		}
+
 	}
+
 	go m.packetHandle()
 	return nil
 }
