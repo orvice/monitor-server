@@ -39,7 +39,7 @@ func (g *GrpcClient) Run() error {
 		if err := g.RunStream(); err != nil {
 			g.logger.Errorf("nodeID %d stream failed %v,reconnect...", g.NodeID, err)
 		}
-		time.Sleep(time.Second)
+		time.Sleep(time.Second * 10)
 		continue
 	}
 }
