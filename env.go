@@ -37,4 +37,7 @@ func InitEnv() {
 
 	MuUrl = env.Get("MU_URL")
 	MuToken = env.Get("MU_TOKEN")
+
+	MqQueue = env.Get("MQ_QUEUE")
+	MqUrl = env.Get("MQ_URL")
 }
