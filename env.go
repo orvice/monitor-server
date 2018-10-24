@@ -12,6 +12,8 @@ var (
 	MuUrl, MuToken string
 
 	MonitorMethod string
+
+	MqUrl, MqQueue string
 )
 
 const (
