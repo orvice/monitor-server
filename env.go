@@ -8,6 +8,7 @@ var (
 	Debug          bool
 
 	LoaderMode string
+	SkipStream bool
 
 	MuUrl, MuToken string
 
@@ -33,6 +34,10 @@ func InitEnv() {
 	NodeConfigPath = env.Get("NODE_CONFIG_PATH", "config.json")
 	if env.Get("DEBUG") == "true" {
 		Debug = true
+	}
+
+	if env.Get("SKIP_STREAM") == "true" {
+		SkipStream = true
 	}
 
 	MuUrl = env.Get("MU_URL")

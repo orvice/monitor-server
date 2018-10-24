@@ -42,6 +42,10 @@ func (m *Manager) Run() error {
 	}
 	for _, n := range nodes {
 
+		if SkipStream {
+			continue
+		}
+
 		switch MonitorMethod {
 		case Grpc:
 			c := client.NewGrpcClient(n.ID, n.GrpcAddr, m.packetCh, m.logger)
@@ -55,11 +59,11 @@ func (m *Manager) Run() error {
 			m.clients.Store(n.ID, c)
 		}
 
-		if len(MqUrl) != 0 {
-			mqc := client.NewMqClient(MqUrl, MqQueue, m.packetCh, m.logger)
-			go mqc.Init()
-		}
+	}
 
+	if len(MqUrl) != 0 {
+		mqc := client.NewMqClient(MqUrl, MqQueue, m.packetCh, m.logger)
+		go mqc.Init()
 	}
 
 	go m.packetHandle()
