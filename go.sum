@@ -27,6 +27,8 @@ github.com/googollee/go-socket.io v0.0.0-20181101151912-c8aeb1ed9b49 h1:vKXGRzlh
 github.com/googollee/go-socket.io v0.0.0-20181101151912-c8aeb1ed9b49/go.mod h1:ftBGBMhSYToR5oV4ImIPKvAIsNaTkLC+tTvoNafqxlQ=
 github.com/gorilla/websocket v1.4.0 h1:WDFjx/TMzVgy9VdMMQi2K2Emtwi2QcUQsztZ/zLaH/Q=
 github.com/gorilla/websocket v1.4.0/go.mod h1:E7qHFY5m1UJ88s3WnNqhKjPHQ0heANvMoAMk2YaljkQ=
+github.com/influxdata/influxdb v1.6.4 h1:K8wPlkrP02HzHTJbbUQQ1CZ2Hw6LtpG4xbNEgnlhMZU=
+github.com/influxdata/influxdb v1.6.4/go.mod h1:qZna6X/4elxqT3yI9iZYdZrWWdeFOOprn86kgg4+IzY=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/mattn/go-isatty v0.0.4 h1:bnP0vzxcAdeI1zdubAl5PjU6zsERjGZb7raWodagDYs=

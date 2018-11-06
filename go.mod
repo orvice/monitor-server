@@ -9,6 +9,7 @@ require (
 	github.com/googollee/go-engine.io v0.0.0-20180829091931-e2f255711dcb // indirect
 	github.com/googollee/go-socket.io v0.0.0-20181101151912-c8aeb1ed9b49
 	github.com/gorilla/websocket v1.4.0
+	github.com/influxdata/influxdb v1.6.4
 	github.com/orvice/kit v0.0.0-20181024151443-bbea0f85c2d9
 	github.com/orvice/monitor-client v0.0.0-20181106174027-e54a31a6d4c5
 	github.com/orvice/shadowsocks-go v0.0.0-20160907161905-df93b5d1852a // indirect
