@@ -1,16 +1,16 @@
 FROM golang:1.11 as builder
 
-## Create a directory and Add Code
-RUN mkdir -p /go/src/github.com/orvice/monitor-server
-WORKDIR /go/src/github.com/orvice/monitor-server
-ADD .  /go/src/github.com/orvice/monitor-server
+WORKDIR /home/app
+COPY go.mod go.sum ./
 
-RUN go get
-RUN CGO_ENABLED=0 go build
+RUN go mod download
+
+COPY . .
+RUN CGO_ENABLED=0 go build -o monitor-server
 
 
-FROM orvice/go-runtime
+FROM orvice/go-runtime:lite
 
-COPY --from=builder /go/src/github.com/orvice/monitor-server/monitor-server .
+COPY --from=builder /home/app/monitor-server .
 
 ENTRYPOINT [ "./monitor-server" ]
