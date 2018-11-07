@@ -14,6 +14,14 @@ type InfluxStorage struct {
 	tableName string
 }
 
+func NewInfluxStorage(cli client.Client, dbName, tableName string) *InfluxStorage {
+	return &InfluxStorage{
+		cli,
+		dbName,
+		tableName,
+	}
+}
+
 func (i *InfluxStorage) InsertNodeInfo(ns []mod.NodeStat) error {
 	bp, err := client.NewBatchPoints(client.BatchPointsConfig{
 		Database: i.dbName,
