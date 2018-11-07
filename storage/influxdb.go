@@ -51,7 +51,7 @@ func (i *InfluxStorage) InsertNodeInfo(ns []mod.NodeStat) error {
 			i.tableName,
 			tags,
 			fields,
-			time.Now(),
+			time.Unix(n.Time,0),
 		)
 		if err != nil {
 			return err
