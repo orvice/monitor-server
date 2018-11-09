@@ -45,13 +45,15 @@ func (i *InfluxStorage) InsertNodeInfo(ns []mod.NodeStat) error {
 			"load1":       n.Stat.AvgLoad.Load1,
 			"load5":       n.Stat.AvgLoad.Load5,
 			"load15":      n.Stat.AvgLoad.Load15,
+			"net_status":  n.Stat.NetInfo.Status,
+			"disk_usage":  n.Stat.DiskUsage.UsedPercent,
 		}
 
 		pt, err := client.NewPoint(
 			i.tableName,
 			tags,
 			fields,
-			time.Unix(n.Time,0),
+			time.Unix(n.Time, 0),
 		)
 		if err != nil {
 			return err
