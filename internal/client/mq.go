@@ -27,7 +27,7 @@ func NewMqClient(url, queue string, ch chan mod.Packet, log contract.Logger) *Mq
 
 func (m *MqClient) Init(l contract.Logger) {
 	var err error
-	m.consumer, err = mq.NewConsumer(m.url, m.queue, "", m.handle, l)
+	m.consumer, err = mq.NewConsumer(m.url, m.queue, "", m.handle, l, true)
 	if err != nil {
 		m.logger.Error(err)
 		return
