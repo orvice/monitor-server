@@ -7,7 +7,7 @@ require (
 	github.com/catpie/musdk-go v0.0.0-20181005143055-45b1f2af5e55
 	github.com/codahale/chacha20 v0.0.0-20151107025005-ec07b4f69a3f // indirect
 	github.com/gin-gonic/gin v1.4.0
-	github.com/go-ole/go-ole v1.2.2 // indirect
+	github.com/go-ole/go-ole v1.2.4 // indirect
 	github.com/googollee/go-engine.io v0.0.0-20180829091931-e2f255711dcb // indirect
 	github.com/googollee/go-socket.io v0.0.0-20181101151912-c8aeb1ed9b49
 	github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e // indirect
