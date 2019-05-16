@@ -1,20 +1,20 @@
-package main
+package sio
 
 import (
 	"context"
 	"sync"
 
-	"github.com/orvice/kit/log"
-	"github.com/orvice/monitor-server/mod"
+	"github.com/orvice/monitor-server/internal/mod"
+	"github.com/weeon/contract"
 )
 
 type IoManager struct {
 	ctx     context.Context
 	clients *sync.Map
-	logger  log.Logger
+	logger  contract.Logger
 }
 
-func NewIoManager(logger log.Logger) *IoManager {
+func NewIoManager(logger contract.Logger) *IoManager {
 	iom := &IoManager{
 		clients: new(sync.Map),
 		logger:  logger,

@@ -6,7 +6,7 @@ import (
 
 	"github.com/orvice/kit/log"
 	"github.com/orvice/monitor-client/proto"
-	"github.com/orvice/monitor-server/mod"
+	"github.com/orvice/monitor-server/internal/mod"
 	"google.golang.org/grpc"
 )
 

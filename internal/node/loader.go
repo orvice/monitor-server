@@ -1,11 +1,11 @@
-package main
+package node
 
 import (
 	"encoding/json"
 	"github.com/catpie/musdk-go"
+	"github.com/orvice/monitor-server/internal/config"
+	"github.com/orvice/monitor-server/internal/mod"
 	"io/ioutil"
-
-	"github.com/orvice/monitor-server/mod"
 )
 
 type FileNodeLoader struct {
@@ -59,10 +59,9 @@ func (m *MuLoader) GetNodes() ([]mod.Node, error) {
 	return out, nil
 }
 
-func InitNodeLoader() {
-	if LoaderMode == MuMode {
-		nodeLoader = NewMuLoader(MuUrl, MuToken)
-		return
+func InitNodeLoader() mod.NodeLoader {
+	if config.LoaderMode == config.MuMode {
+		return  NewMuLoader(config.MuUrl, config.MuToken)
 	}
-	nodeLoader = NewFileNodeLoader(NodeConfigPath)
+	return NewFileNodeLoader(config.NodeConfigPath)
 }

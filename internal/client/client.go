@@ -6,7 +6,7 @@ import (
 
 	"github.com/gorilla/websocket"
 	"github.com/orvice/kit/log"
-	"github.com/orvice/monitor-server/mod"
+	"github.com/orvice/monitor-server/internal/mod"
 )
 
 type Client struct {

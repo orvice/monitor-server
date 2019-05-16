@@ -3,9 +3,10 @@ package client
 import (
 	"encoding/json"
 	"github.com/orvice/kit/log"
-	"github.com/orvice/kit/utils/mq"
 	cm "github.com/orvice/monitor-client/mod"
-	"github.com/orvice/monitor-server/mod"
+	"github.com/orvice/monitor-server/internal/mod"
+	"github.com/weeon/contract"
+	"github.com/weeon/utils/mq"
 )
 
 type MqClient struct {
@@ -15,7 +16,7 @@ type MqClient struct {
 	url, queue  string
 }
 
-func NewMqClient(url, queue string, ch chan mod.Packet, log log.Logger) *MqClient {
+func NewMqClient(url, queue string, ch chan mod.Packet, log contract.Logger) *MqClient {
 	return &MqClient{
 		messageRecv: ch,
 		logger:      log,
@@ -24,9 +25,9 @@ func NewMqClient(url, queue string, ch chan mod.Packet, log log.Logger) *MqClien
 	}
 }
 
-func (m *MqClient) Init() {
+func (m *MqClient) Init(l contract.Logger) {
 	var err error
-	m.consumer, err = mq.NewConsumer(m.url, m.queue, "", m.handle)
+	m.consumer, err = mq.NewConsumer(m.url, m.queue, "", m.handle, l)
 	if err != nil {
 		m.logger.Error(err)
 		return

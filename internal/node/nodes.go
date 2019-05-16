@@ -1,15 +1,16 @@
-package main
+package node
 
 import (
 	"context"
 	"encoding/json"
+	"github.com/orvice/monitor-server/internal/sio"
+	"github.com/weeon/contract"
 	"sync"
-
-	"github.com/orvice/kit/log"
 	cm "github.com/orvice/monitor-client/mod"
-	"github.com/orvice/monitor-server/client"
 	"github.com/orvice/monitor-server/enum"
-	"github.com/orvice/monitor-server/mod"
+	"github.com/orvice/monitor-server/internal/client"
+	"github.com/orvice/monitor-server/internal/config"
+	"github.com/orvice/monitor-server/internal/mod"
 )
 
 type Manager struct {
@@ -19,10 +20,10 @@ type Manager struct {
 	clients  *sync.Map
 
 	nodeLoader mod.NodeLoader
-	logger     log.Logger
+	logger     contract.Logger
 }
 
-func NewManager(nl mod.NodeLoader, l log.Logger) *Manager {
+func NewManager(nl mod.NodeLoader, l contract.Logger) *Manager {
 	ctx, cancel := context.WithCancel(context.Background())
 	m := &Manager{
 		packetCh:   make(chan mod.Packet, 10),
@@ -42,12 +43,12 @@ func (m *Manager) Run() error {
 	}
 	for _, n := range nodes {
 
-		if SkipStream {
+		if config.SkipStream {
 			continue
 		}
 
-		switch MonitorMethod {
-		case Grpc:
+		switch config.MonitorMethod {
+		case config.Grpc:
 			c := client.NewGrpcClient(n.ID, n.GrpcAddr, m.packetCh, m.logger)
 			m.logger.Infof("run node %d addr: %s in grpc mod", n.ID, n.GrpcAddr)
 			go c.Run()
@@ -61,9 +62,9 @@ func (m *Manager) Run() error {
 
 	}
 
-	if len(MqUrl) != 0 {
-		mqc := client.NewMqClient(MqUrl, MqQueue, m.packetCh, m.logger)
-		go mqc.Init()
+	if len(config.MqUrl) != 0 {
+		mqc := client.NewMqClient(config.MqUrl, config.MqQueue, m.packetCh, m.logger)
+		go mqc.Init(m.logger)
 	}
 
 	go m.packetHandle()
@@ -80,7 +81,7 @@ func (m *Manager) packetHandle() {
 				m.logger.Error(err)
 				continue
 			}
-			ioManager.Broadcast(enum.EventServerStat, mod.NodeStat{
+			sio.IOM.Broadcast(enum.EventServerStat, mod.NodeStat{
 				NodeID: p.NodeID,
 				Stat:   stat,
 			})
