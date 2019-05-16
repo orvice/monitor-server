@@ -2,7 +2,6 @@ package client
 
 import (
 	"encoding/json"
-	"github.com/orvice/kit/log"
 	cm "github.com/orvice/monitor-client/mod"
 	"github.com/orvice/monitor-server/internal/mod"
 	"github.com/weeon/contract"
@@ -11,7 +10,7 @@ import (
 
 type MqClient struct {
 	messageRecv chan mod.Packet
-	logger      log.Logger
+	logger      contract.Logger
 	consumer    *mq.Consumer
 	url, queue  string
 }
@@ -46,6 +45,10 @@ func (m MqClient) handle(b []byte) {
 	if err != nil {
 		return
 	}
+
+	m.logger.Debugw("recv message from mq",
+		"mod", ns,
+	)
 
 	m.messageRecv <- mod.Packet{
 		NodeID:  ns.NodeID,
