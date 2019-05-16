@@ -18,4 +18,4 @@ ENV PROJECT_NAME monitor-server
 
 COPY --from=builder /home/app/bin/${PROJECT_NAME} .
 
-ENTRYPOINT "./v2ray-mu"
+ENTRYPOINT "./monitor-server"
