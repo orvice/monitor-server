@@ -105,6 +105,7 @@ github.com/weeon/utils v0.0.0-20190516093336-c1ee61728288 h1:K22qphsDydbZWbFhhXJ
 github.com/weeon/utils v0.0.0-20190516093336-c1ee61728288/go.mod h1:3xD9YYf6Fj4/FjykKOBcrND6NaFizZJcErbQIVmG6MM=
 github.com/weeon/utils v0.0.0-20190516105247-fee10db18a89/go.mod h1:3xD9YYf6Fj4/FjykKOBcrND6NaFizZJcErbQIVmG6MM=
 github.com/weeon/utils v0.0.0-20190516110137-cfb63a4e4bca/go.mod h1:3xD9YYf6Fj4/FjykKOBcrND6NaFizZJcErbQIVmG6MM=
+github.com/weeon/utils v0.0.0-20190516112522-ce31b0983b8b/go.mod h1:3xD9YYf6Fj4/FjykKOBcrND6NaFizZJcErbQIVmG6MM=
 go.uber.org/atomic v1.4.0 h1:cxzIVoETapQEqDhQu3QfnvXAV4AlzcvUCxkVUFw3+EU=
 go.uber.org/atomic v1.4.0/go.mod h1:gD2HeocX3+yG+ygLZcrzQJaqmWj9AIm7n08wl/qW/PE=
 go.uber.org/multierr v1.1.0 h1:HoEmRHQPVSqub6w2z2d2EOVs2fjyFRGyofhKuyDq0QI=
