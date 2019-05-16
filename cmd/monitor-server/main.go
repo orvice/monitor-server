@@ -23,7 +23,7 @@ func main() {
 	errExit(err)
 	err = hub.Manager.Run()
 	errExit(err)
-	web.InitWeb()
+	web.InitWeb(hub.Logger)
 }
 
 func errExit(err error) {

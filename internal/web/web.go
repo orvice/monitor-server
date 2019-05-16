@@ -3,6 +3,8 @@ package web
 import (
 	"fmt"
 	"github.com/orvice/monitor-server/internal/sio"
+	"github.com/weeon/contract"
+	"github.com/weeon/utils/ginutil"
 	"net/http"
 
 	"github.com/DeanThompson/ginpprof"
@@ -25,9 +27,10 @@ func getNodesMap() map[string]mod.Node {
 	return m
 }
 
-func InitWeb() {
+func InitWeb(l contract.Logger) {
 	r := gin.Default()
 	r.Use(cors.Default())
+	r.Use(ginutil.WrapRequestID)
 	r.GET("/nodes", func(c *gin.Context) {
 		var err error
 		if nodes != nil {
@@ -49,7 +52,8 @@ func InitWeb() {
 
 	r.GET("/socket.io/", sio.SocketIOGinHandler)
 	r.POST("/socket.io/", sio.SocketIOGinHandler)
-	r.Handle("WS", "/socket.io/",sio.SocketIOGinHandler)
+	r.Handle("WS", "/socket.io/", sio.SocketIOGinHandler)
 	r.Handle("WSS", "/socket.io/", sio.SocketIOGinHandler)
+	r.POST("/nodes/:node_id/data", DataCollect)
 	r.Run(config.ListenAddr) // listen and serve on 0.0.0.0:8080
 }
