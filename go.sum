@@ -1,5 +1,6 @@
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 cloud.google.com/go v0.32.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
+github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/DeanThompson/ginpprof v0.0.0-20170218162546-8c0e31bfeaa8 h1:ciyrUaonhkfoqjGNUKzRVvpkugE+afQ7HKU2umHvANo=
 github.com/DeanThompson/ginpprof v0.0.0-20170218162546-8c0e31bfeaa8/go.mod h1:kMi/fSDAgvjo9TYfYwYeQ2vkyj+VTR/tB6u/Tjh39t0=
@@ -72,6 +73,7 @@ github.com/orvice/shadowsocks-go v0.0.0-20160907161905-df93b5d1852a h1:PwfLk2SQs
 github.com/orvice/shadowsocks-go v0.0.0-20160907161905-df93b5d1852a/go.mod h1:sFHnpyfFkJyeBf74AJFhORwW1hgJxKhxl3JbmXzM6J8=
 github.com/orvice/utils v0.0.0-20180715141935-5b71615d9c36 h1:AuGKyNjW6iAb+IGZbQFRPyjJjVR1o/vkCPZIXjOLU1k=
 github.com/orvice/utils v0.0.0-20180715141935-5b71615d9c36/go.mod h1:2WVdjh2swOycvNPtGpbP49+Idjavuop9pfYr8RytRfs=
+github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
@@ -95,8 +97,6 @@ github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UV
 github.com/ugorji/go v1.1.4/go.mod h1:uQMGLiO92mf5W77hV/PUCpI3pbzQx3CRekS0kk+RGrc=
 github.com/ugorji/go v1.1.5-0.20190507201401-08f7b401aef1 h1:ALg+62m5IHB+GknweVruLLsyTSC2sx2EtZ4o5AjNWEk=
 github.com/ugorji/go v1.1.5-0.20190507201401-08f7b401aef1/go.mod h1:CNnb6ZvPKQMR+Hz6QI76TRCBNgyJIxEmTBn+1u8HELw=
-github.com/ugorji/go/codec v0.0.0-20181022190402-e5e69e061d4f h1:y3Vj7GoDdcBkxFa2RUUFKM25TrBbWVDnjRDI0u975zQ=
-github.com/ugorji/go/codec v0.0.0-20181022190402-e5e69e061d4f/go.mod h1:VFNgLljTbGfSG7qAOspJ7OScBnGdDN/yBr0sguwnwf0=
 github.com/weeon/contract v0.0.0-20190510071243-5d5297a1e668 h1:wBoshyu8674pc5utbZp5u+kNXZC24EDCaIpcmXdu+TU=
 github.com/weeon/contract v0.0.0-20190510071243-5d5297a1e668/go.mod h1:Lu4Rx+OfCPH1ljtEpsravnbAYjVCwGKYe1kd1oNIwX0=
 github.com/weeon/log v0.0.0-20190503044751-28d9bf4b0af3 h1:PygG7GpbE6q8grXpC7lFSRLjNL/nvpi4DKvrLxEoDIE=

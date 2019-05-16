@@ -20,7 +20,9 @@ require (
 	github.com/smartystreets/assertions v0.0.0-20190116191733-b6c0e53d7304 // indirect
 	github.com/smartystreets/goconvey v0.0.0-20181108003508-044398e4856c // indirect
 	github.com/weeon/contract v0.0.0-20190510071243-5d5297a1e668
+	github.com/weeon/log v0.0.0-20190503044751-28d9bf4b0af3
 	github.com/weeon/utils v0.0.0-20190516093336-c1ee61728288
+	go.uber.org/zap v1.10.0
 	google.golang.org/grpc v1.18.0
 )
 
