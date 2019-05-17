@@ -27,6 +27,7 @@ github.com/gin-gonic/gin v1.4.0/go.mod h1:OW2EZn3DO8Ln9oIKOvM++LBO+5UPHJJDH72/q/
 github.com/go-ole/go-ole v1.2.4 h1:nNBDSCOigTSiarFpYE9J/KtEA1IOW4CNeqT9TQDqCxI=
 github.com/go-ole/go-ole v1.2.4/go.mod h1:XCwSNxSkXRo4vlyPy93sltvi/qJq0jqQhjqQNIwKuxM=
 github.com/gofrs/uuid v3.1.0+incompatible/go.mod h1:b2aQJv3Z4Fp6yNu3cdSllBxTCLRxnplIgP/c0N/04lM=
+github.com/gofrs/uuid v3.2.0+incompatible h1:y12jRkkFxsd7GpqdSZ+/KCs/fJbqpEXSGd4+jfEaewE=
 github.com/gofrs/uuid v3.2.0+incompatible/go.mod h1:b2aQJv3Z4Fp6yNu3cdSllBxTCLRxnplIgP/c0N/04lM=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b h1:VKtxabqXZkF25pY9ekfRL6a582T4P37/31XEstQ5p58=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=
@@ -101,10 +102,7 @@ github.com/weeon/contract v0.0.0-20190510071243-5d5297a1e668 h1:wBoshyu8674pc5ut
 github.com/weeon/contract v0.0.0-20190510071243-5d5297a1e668/go.mod h1:Lu4Rx+OfCPH1ljtEpsravnbAYjVCwGKYe1kd1oNIwX0=
 github.com/weeon/log v0.0.0-20190503044751-28d9bf4b0af3 h1:PygG7GpbE6q8grXpC7lFSRLjNL/nvpi4DKvrLxEoDIE=
 github.com/weeon/log v0.0.0-20190503044751-28d9bf4b0af3/go.mod h1:Nie/q+jrMcehLWMQwS45ImQeDlf5chFDt7YJeGSmB1k=
-github.com/weeon/utils v0.0.0-20190516093336-c1ee61728288 h1:K22qphsDydbZWbFhhXJSPd5AB1jv7uMv9gHrWGjG1Dk=
-github.com/weeon/utils v0.0.0-20190516093336-c1ee61728288/go.mod h1:3xD9YYf6Fj4/FjykKOBcrND6NaFizZJcErbQIVmG6MM=
-github.com/weeon/utils v0.0.0-20190516105247-fee10db18a89/go.mod h1:3xD9YYf6Fj4/FjykKOBcrND6NaFizZJcErbQIVmG6MM=
-github.com/weeon/utils v0.0.0-20190516110137-cfb63a4e4bca/go.mod h1:3xD9YYf6Fj4/FjykKOBcrND6NaFizZJcErbQIVmG6MM=
+github.com/weeon/utils v0.0.0-20190516112522-ce31b0983b8b h1:rmKP6ahYopg7GlYkTYnAsU5Q4/NVg+J6FLKk2VA2c/k=
 github.com/weeon/utils v0.0.0-20190516112522-ce31b0983b8b/go.mod h1:3xD9YYf6Fj4/FjykKOBcrND6NaFizZJcErbQIVmG6MM=
 go.uber.org/atomic v1.4.0 h1:cxzIVoETapQEqDhQu3QfnvXAV4AlzcvUCxkVUFw3+EU=
 go.uber.org/atomic v1.4.0/go.mod h1:gD2HeocX3+yG+ygLZcrzQJaqmWj9AIm7n08wl/qW/PE=

@@ -15,6 +15,8 @@ var (
 	MonitorMethod string
 
 	MqUrl, MqQueue string
+
+	PostKey string
 )
 
 const (
@@ -45,4 +47,6 @@ func InitEnv() {
 
 	MqQueue = env.Get("MQ_QUEUE")
 	MqUrl = env.Get("MQ_URL")
+
+	PostKey = env.Get("POST_KEY")
 }

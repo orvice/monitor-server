@@ -90,3 +90,7 @@ func (m *Manager) packetHandle() {
 		}
 	}
 }
+
+func (m *Manager) SendPacket(p mod.Packet){
+	m.packetCh <- p
+}
