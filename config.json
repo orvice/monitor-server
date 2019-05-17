@@ -1,17 +1,13 @@
-[
-  {
-    "id": 1,
-    "name": "HK",
-    "addr": "ws://hk1.loli.lc:8082/ws"
-  },
+[{
+  "id": 1,
+  "name": "HK"
+},
   {
     "id": 2,
-    "name": "US",
-    "addr": "ws://us2.loli.lc:8080/ws"
+    "name": "US"
   },
   {
     "id": 3,
-    "name": "RU",
-    "addr": "ws://ru.loli.lc:8080/ws"
+    "name": "RU"
   }
 ]

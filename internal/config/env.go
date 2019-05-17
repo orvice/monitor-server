@@ -38,8 +38,10 @@ func InitEnv() {
 		Debug = true
 	}
 
-	if env.Get("SKIP_STREAM") == "true" {
-		SkipStream = true
+	// @todo
+	SkipStream = true
+	if env.Get("SKIP_STREAM") == "false" {
+		SkipStream = false
 	}
 
 	MuUrl = env.Get("MU_URL")

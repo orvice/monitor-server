@@ -48,14 +48,9 @@ func (m *Manager) Run() error {
 		}
 
 		switch config.MonitorMethod {
-		case config.Grpc:
+		default:
 			c := client.NewGrpcClient(n.ID, n.GrpcAddr, m.packetCh, m.logger)
 			m.logger.Infof("run node %d addr: %s in grpc mod", n.ID, n.GrpcAddr)
-			go c.Run()
-			m.clients.Store(n.ID, c)
-		default:
-			c := client.NewClient(n.ID, n.Addr, m.packetCh, m.logger)
-			m.logger.Infof("run node %d addr: %s", n.ID, n.Addr)
 			go c.Run()
 			m.clients.Store(n.ID, c)
 		}

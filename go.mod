@@ -12,6 +12,7 @@ require (
 	github.com/googollee/go-socket.io v0.0.0-20181101151912-c8aeb1ed9b49
 	github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e // indirect
 	github.com/gorilla/websocket v1.4.0
+	github.com/influxdata/influxdb1-client v0.0.0-20190402204710-8ff2fc3824fc // indirect
 	github.com/jtolds/gls v4.2.1+incompatible // indirect
 	github.com/orvice/kit v0.0.0-20181024151443-bbea0f85c2d9
 	github.com/orvice/monitor-client v0.0.0-20181106174027-e54a31a6d4c5
