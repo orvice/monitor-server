@@ -11,6 +11,7 @@ import (
 	"github.com/orvice/monitor-server/internal/client"
 	"github.com/orvice/monitor-server/internal/config"
 	"github.com/orvice/monitor-server/internal/mod"
+	"time"
 )
 
 type Manager struct {
@@ -21,6 +22,7 @@ type Manager struct {
 
 	nodeLoader mod.NodeLoader
 	logger     contract.Logger
+	lastTime   time.Time
 }
 
 func NewManager(nl mod.NodeLoader, l contract.Logger) *Manager {
@@ -32,6 +34,7 @@ func NewManager(nl mod.NodeLoader, l contract.Logger) *Manager {
 		clients:    new(sync.Map),
 		nodeLoader: nl,
 		logger:     l,
+		lastTime: time.Now(),
 	}
 	return m
 }
@@ -66,12 +69,17 @@ func (m *Manager) Run() error {
 	return nil
 }
 
+func(m *Manager) GetLastTime() time.Time{
+	return m.lastTime
+}
+
 func (m *Manager) packetHandle() {
 	for {
 		select {
 		case p := <-m.packetCh:
 			var stat cm.SystemInfo
 			err := json.Unmarshal(p.Message, &stat)
+			m.lastTime = time.Now()
 			if err != nil {
 				m.logger.Error(err)
 				continue

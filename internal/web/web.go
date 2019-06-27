@@ -55,5 +55,6 @@ func InitWeb(l contract.Logger) {
 	r.Handle("WS", "/socket.io/", sio.SocketIOGinHandler)
 	r.Handle("WSS", "/socket.io/", sio.SocketIOGinHandler)
 	r.POST("/nodes/:node_id", DataCollect)
+	r.GET("/packet_stat",PacketStat)
 	r.Run(config.ListenAddr) // listen and serve on 0.0.0.0:8080
 }

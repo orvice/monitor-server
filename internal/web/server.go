@@ -1,13 +1,15 @@
 package web
 
 import (
+	"net/http"
+	"strconv"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/orvice/monitor-server/enum"
 	"github.com/orvice/monitor-server/internal/config"
 	"github.com/orvice/monitor-server/internal/hub"
 	"github.com/orvice/monitor-server/internal/mod"
-	"net/http"
-	"strconv"
 )
 
 type Ret struct {
@@ -47,7 +49,19 @@ func DataCollect(c *gin.Context) {
 		Message: rawData,
 	}
 	hub.Manager.SendPacket(data)
-	c.JSON(http.StatusOK, Ret{
-	})
+	c.JSON(http.StatusOK, Ret{})
+	return
+}
+
+func PacketStat(c *gin.Context) {
+	data := map[string]interface{}{
+		"time": hub.Manager.GetLastTime(),
+	}
+
+	if hub.Manager.GetLastTime().Before(time.Now().Add(-time.Minute)) {
+		c.JSON(http.StatusNotAcceptable, data)
+		return
+	}
+	c.JSON(http.StatusOK, data)
 	return
 }
