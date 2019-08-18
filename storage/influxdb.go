@@ -2,10 +2,12 @@ package storage
 
 import (
 	"fmt"
+	_ "github.com/influxdata/influxdb-client-go"
 	"time"
-
-	"github.com/influxdata/influxdb1-client/v2"
 	"github.com/orvice/monitor-client/mod"
+
+	_ "github.com/influxdata/influxdb1-client" // this is important because of the bug in go mod
+	client "github.com/influxdata/influxdb1-client/v2"
 )
 
 type InfluxStorage struct {
