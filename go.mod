@@ -29,3 +29,5 @@ require (
 )
 
 replace github.com/ugorji/go/codec => github.com/ugorji/go v1.1.5-0.20190507201401-08f7b401aef1
+
+go 1.13

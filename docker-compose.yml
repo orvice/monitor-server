@@ -9,4 +9,5 @@ services:
     environment:
       - NODE_CONFIG_PATH=/etc/monitor-server/config.json
       - LISTEN_ADDR=:8081
+      - POST_KEY=abc
     container_name: monitor-server
